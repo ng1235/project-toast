@@ -19,6 +19,7 @@ const ICONS_BY_VARIANT = {
 };
 
 function Toast({ message, variant, closeToast }) {
+  const Icon = ICONS_BY_VARIANT[variant];
   return (
     <div className={`${styles.toast} ${styles.notice} ${styles[variant]}`}>
       <div className={styles.iconContainer}>
@@ -31,11 +32,6 @@ function Toast({ message, variant, closeToast }) {
       </button>
     </div>
   );
-}
-
-function Icon({ variant }) {
-  const Icon = ICONS_BY_VARIANT[variant];
-  return <Icon size={24} />;
 }
 
 export default Toast;
