@@ -10,9 +10,6 @@ function ToastPlayground() {
   const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
   const [displayToast, setDisplayToast] = React.useState(false);
 
-  function handleCloseToast() {
-    setDisplayToast(false);
-  }
   return (
     <div className={styles.wrapper}>
       <header>
@@ -24,7 +21,7 @@ function ToastPlayground() {
         <Toast
           message={message}
           variant={variant}
-          closeToast={handleCloseToast}
+          closeToast={() => setDisplayToast(false)}
         />
       )}
 
